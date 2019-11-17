@@ -1,0 +1,45 @@
+name:                adventofcode
+version:             0.1.0.0
+github:              "dsvensson/advent-of-code-2018"
+license:             ISC
+author:              "Daniel Svensson"
+maintainer:          "dsvensson@gmail.com"
+copyright:           "2018 Daniel Svensson"
+
+description: Advent of Code
+
+extra-source-files:
+  - LICENSE
+
+dependencies:
+  - base >= 4.7 && < 5
+  - text
+  - containers
+  - regex-tdfa
+  - attoparsec
+  - bytestring
+  - MemoTrie
+  - search-algorithms
+
+library:
+  source-dirs: src
+
+tests:
+  adventofcode-test:
+    main:
+      Spec.hs
+    source-dirs:
+      test
+    dependencies:
+      - adventofcode
+      - hspec
+
+benchmarks:
+  adventofcode-benchmark:
+    main:
+      Main.hs
+    source-dirs:
+      bench
+    dependencies:
+      - adventofcode
+      - criterion
